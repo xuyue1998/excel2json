@@ -32,7 +32,7 @@ namespace excel2json
             for (int i = 0; i < excel.Sheets.Count; i++)
             {
                 DataTable sheet = excel.Sheets[i];
-
+               
                 // 过滤掉包含特定前缀的表单
                 string sheetName = sheet.TableName;
                 if (excludePrefix.Length > 0 && sheetName.StartsWith(excludePrefix))
@@ -127,6 +127,7 @@ namespace excel2json
         private Dictionary<string, object> convertRowToDict(DataTable sheet, DataRow row, bool lowcase, int firstDataRow, string excludePrefix, bool cellJson, bool allString)
         {
             var rowData = new Dictionary<string, object>();
+            DataRow typeRow = sheet.Rows[0];
             int col = 0;
             foreach (DataColumn column in sheet.Columns)
             {
@@ -136,6 +137,13 @@ namespace excel2json
                     continue;
 
                 object value = row[column];
+
+                //忽略未指定变量类型的数据
+                if (typeRow[column].ToString() == "")
+                {
+                    Console.WriteLine("变量{0}所在列未指定类型，或为空列，不处理json", column.ToString());
+                    continue;
+                }
 
                 // 尝试将单元格字符串转换成 Json Array 或者 Json Object
                 if (cellJson)

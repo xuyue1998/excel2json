@@ -32,11 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>excel2json.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\excel2json.ico</ApplicationIcon>
+    <ApplicationIcon>excel2json.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
@@ -112,6 +111,7 @@
     <None Include="Resources\SQL.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\code.png" />
+    <Content Include="excel2json.ico" />
     <Content Include="Resources\excel.png" />
     <Content Include="Resources\excel2json.ico" />
     <None Include="Resources\excel_64.png" />

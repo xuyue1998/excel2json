@@ -163,8 +163,8 @@
             this.statusLabel.IsLink = true;
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusLabel.Size = new System.Drawing.Size(139, 17);
-            this.statusLabel.Text = "https://neil3d.github.io";
+            this.statusLabel.Size = new System.Drawing.Size(155, 17);
+            this.statusLabel.Text = "https://www.deltaxu.com/";
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.statusLabel.Click += new System.EventHandler(this.statusLabel_Click);
             // 
@@ -535,6 +535,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "excel2json";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);

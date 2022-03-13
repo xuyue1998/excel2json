@@ -74,6 +74,13 @@ namespace excel2json
                 if (excludePrefix.Length > 0 && columnName.StartsWith(excludePrefix))
                     continue;
 
+                //忽略未指定变量类型的数据
+                if (typeRow[column].ToString() == "")
+                {
+                    Console.WriteLine("变量{0}所在列未指定类型，或为空列，不处理C#", column.ToString());
+                    continue;
+                }
+
                 FieldDef field;
                 field.name = column.ToString();
                 field.type = typeRow[column].ToString();

@@ -168,7 +168,7 @@ namespace excel2json.GUI
         /// </summary>
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://neil3d.github.io/coding/excel2json.html");
+            System.Diagnostics.Process.Start("https://www.deltaxu.com/%e3%80%90%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7%e3%80%91excal2json/");
         }
 
         /// <summary>
@@ -347,6 +347,11 @@ namespace excel2json.GUI
         private void btnSaveCSharp_Click(object sender, EventArgs e)
         {
             saveToFile(2, "C# code file(*.cs)|*.cs");
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
