@@ -1,6 +1,7 @@
 # excel2json
+本项目继承于：[https://github.com/neil3d/excel2json]
 
-详细帮助文档请见：[https://neil3d.github.io/coding/excel2json.html](https://neil3d.github.io/coding/excel2json.html)
+改编日志请见：[https://www.deltaxu.com/%e3%80%90%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7%e3%80%91excal2json/]
 
 ## 命令行参数
 
