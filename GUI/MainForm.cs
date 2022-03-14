@@ -22,7 +22,6 @@ namespace excel2json.GUI
         private FastColoredTextBox mJsonTextBox;
         private FastColoredTextBox mCSharpTextBox;
 
-
         // 文本框的样式
         private TextStyle mBrownStyle = new TextStyle(Brushes.Brown, null, FontStyle.Regular);
         private TextStyle mMagentaStyle = new TextStyle(Brushes.Magenta, null, FontStyle.Regular);
@@ -43,7 +42,7 @@ namespace excel2json.GUI
 
             //-- syntax highlight text box
             mJsonTextBox = createTextBoxInTab(this.tabPageJSON);
-            mJsonTextBox.Language = Language.Custom;
+            mJsonTextBox.Language = Language.JS;
             mJsonTextBox.TextChanged += new EventHandler<TextChangedEventArgs>(this.jsonTextChanged);
 
             mCSharpTextBox = createTextBoxInTab(this.tabCSharp);
@@ -52,7 +51,7 @@ namespace excel2json.GUI
             //-- componet init states
             this.comboBoxType.SelectedIndex = 0;
             this.comboBoxLowcase.SelectedIndex = 1;
-            this.comboBoxHeader.SelectedIndex = 1;
+            this.comboBoxHeader.SelectedIndex = 2;
             this.comboBoxDateFormat.SelectedIndex = 0;
             this.comboBoxSheetName.SelectedIndex = 1;
 
