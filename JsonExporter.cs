@@ -127,7 +127,8 @@ namespace excel2json
         private Dictionary<string, object> convertRowToDict(DataTable sheet, DataRow row, bool lowcase, int firstDataRow, string excludePrefix, bool cellJson, bool allString)
         {
             var rowData = new Dictionary<string, object>();
-            DataRow typeRow = sheet.Rows[0];
+            DataRow nameRow = sheet.Rows[0];
+            DataRow typeRow = sheet.Rows[1];
             int col = 0;
             foreach (DataColumn column in sheet.Columns)
             {
@@ -181,7 +182,7 @@ namespace excel2json
                     value = value.ToString();
                 }
 
-                string fieldName = column.ToString();
+                string fieldName = nameRow[column].ToString();
                 // 表头自动转换成小写
                 if (lowcase)
                     fieldName = fieldName.ToLower();

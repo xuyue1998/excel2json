@@ -13,7 +13,7 @@ namespace excel2json
         {
             public Options()
             {
-                this.HeaderRows = 3;
+                this.HeaderRows = 4;
                 this.Encoding = "utf8-nobom";
                 this.Lowcase = false;
                 this.ExportArray = false;

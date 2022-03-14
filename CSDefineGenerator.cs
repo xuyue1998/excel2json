@@ -33,9 +33,9 @@ namespace excel2json
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("//");
             sb.AppendLine("// Auto Generated Code By excel2json");
-            sb.AppendLine("// https://neil3d.gitee.io/coding/excel2json.html");
+            sb.AppendLine("// https://github.com/xuyue1998/excel2json");
             sb.AppendLine("// 1. 每个 Sheet 形成一个 Struct 定义, Sheet 的名称作为 Struct 的名称");
-            sb.AppendLine("// 2. 表格约定：第一行是变量名称，第二行是变量类型");
+            sb.AppendLine("// 2. 表格约定：第一行为中文名称，第二行是变量名称，第三行是变量类型，第四行是注释");
             sb.AppendLine();
             sb.AppendFormat("// Generate From {0}.xlsx", excelName);
             sb.AppendLine();
@@ -55,7 +55,7 @@ namespace excel2json
 
         private string _exportSheet(DataTable sheet, string excludePrefix)
         {
-            if (sheet.Columns.Count < 0 || sheet.Rows.Count < 2)
+            if (sheet.Columns.Count < 0 || sheet.Rows.Count < 3)
                 return "";
 
             string sheetName = sheet.TableName;
@@ -64,8 +64,9 @@ namespace excel2json
 
             // get field list
             List<FieldDef> fieldList = new List<FieldDef>();
-            DataRow typeRow = sheet.Rows[0];
-            DataRow commentRow = sheet.Rows[1];
+            DataRow nameRow = sheet.Rows[0];
+            DataRow typeRow = sheet.Rows[1];
+            DataRow commentRow = sheet.Rows[2];
 
             foreach (DataColumn column in sheet.Columns)
             {
@@ -82,7 +83,7 @@ namespace excel2json
                 }
 
                 FieldDef field;
-                field.name = column.ToString();
+                field.name = nameRow[column].ToString();
                 field.type = typeRow[column].ToString();
                 field.comment = commentRow[column].ToString();
 
